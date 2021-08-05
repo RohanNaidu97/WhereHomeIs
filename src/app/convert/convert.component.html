@@ -1,0 +1,20 @@
+<div class="panel">
+    <h1>| Celsius2Farenheit |</h1>
+  </div>
+  
+  <form [formGroup]="temperatureConverter" class="forms">
+    <div class="layout-column ">
+    
+        <section class="layout-row-1">
+            <label> Celsius: </label>
+            <input type="number" class="large" formControlName="celsius" (keyup)="celToFah(temperatureConverter.value) " data-test-id="celsius-input"/>
+            
+        </section>
+    
+        <section class="layout-row-2">
+            <label> Farenheit: </label>
+            <input type="number" class="large" formControlName = "fahren" (keyup)="fahToCel(temperatureConverter.value)" data-test-id="fahrenheit-input"/>
+        
+        </section>
+    </div>
+  </form>

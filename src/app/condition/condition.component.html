@@ -1,0 +1,47 @@
+
+<div class="card">
+    <p> Are you using CTS Laptop?</p>
+    <p>   Yes   </p>
+    <mat-slide-toggle [(ngModel)] = "isChecked">
+    </mat-slide-toggle>
+
+    <p>  No </p>
+  
+    <mat-slide-toggle [(ngModel)] = "notChecked">
+    </mat-slide-toggle>
+    
+    <div class="condition-1" *ngIf = "isChecked && !notChecked">
+     
+      <mat-form-field>
+        <p>Laptop Asset ID</p>
+        <input matInput placeholder="Details" required>
+  
+        <p>Laptop Model</p>
+        <input matInput placeholder="Details" required>
+        
+        <p>Laptop Serial No.</p>
+        <input matInput placeholder="Details" required>
+  
+    </mat-form-field>
+    
+    </div>
+  
+    <div class="condition-2" *ngIf = "notChecked && !isChecked">
+     
+      <mat-form-field>
+        <p>CTS Desktop Model</p>
+        <input matInput placeholder="Details" required>
+  
+        <p>CTS Desktop ID</p>
+        <input matInput placeholder="Details" required>
+        
+        <p>Desktop Serial No.</p>
+        <input matInput placeholder="Details" required>
+  
+    </mat-form-field>
+    
+    </div>
+  
+  </div>
+  
+  

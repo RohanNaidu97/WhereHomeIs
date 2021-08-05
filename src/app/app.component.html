@@ -1,0 +1,89 @@
+<div class="sidenav" ng-controller="appCtrl" layout="vertical" layout-fill>
+<mat-drawer-container class="example-container" [hasBackdrop]="true" >
+    
+    <mat-drawer #drawer mode = push layout="vertical" >
+        
+
+        
+        <div class="nav-list">
+            <ul> 
+                <li>  
+                    <a class="nav-link" routerLink="convert" routerLinkActive="active">Temperature Conversion</a>
+                </li>
+                <li>
+                    <a class="nav-link" routerLink="condition" routerLinkActive="active">Conditional Form</a> 
+                </li>
+                <li>
+                    <a class="nav-link" routerLink="addition" >Dynamically Add or Remove Fields</a> 
+                </li>
+                <li>
+                    <a class="nav-link" routerLink="table" >Table with Daily Data</a> 
+                </li>
+            </ul>
+        </div>
+
+
+
+
+    </mat-drawer>
+
+
+    <mat-drawer-content >
+      <button mat-raised-button (click)="drawer.toggle()">Menu </button>
+      <h1>|| Choose an Option.</h1>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  
+    <div class = "router">
+    <router-outlet></router-outlet>
+    </div>
+</div>
+
+
+
+    <!-- <div class="home-page">
+        Hello! this is the home page........
+    </div> -->
+
+
+<!-- 
+<div>
+    <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+        </button>
+        <span>My App</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+        </button>
+    </mat-toolbar>
+
+
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Has backdrop</mat-label>
+        <mat-select #hasBackdrop>
+          <mat-option>Unset</mat-option>
+          <mat-option [value]="true">True</mat-option>
+          <mat-option [value]="false">False</mat-option>
+        </mat-select>
+      
+
+        <a mat-list-item href="C:\Users\841538\repository\Home\src\app\convert\convert.component.html">Go to temperature converter</a>
+        <a class="nav-link" routerLink="home">Home</a>
+
+        <a  [routerLink]="['./convert.component.html']"> Convert </a>
+
+
+      <mat-select #mode value="side">
+          <mat-option value="side">Side</mat-option>
+          <mat-option value="over">Over</mat-option>
+          <mat-option value="push">Push</mat-option>
+        </mat-select>
+      </mat-form-field>
+</div>  -->

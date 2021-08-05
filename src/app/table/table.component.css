@@ -1,0 +1,34 @@
+.container{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+}
+
+.container thead{
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.container th,
+.container td {
+    padding: 12px 15px;
+}
+
+.container tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.container tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.container tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}

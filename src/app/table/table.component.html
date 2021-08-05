@@ -1,0 +1,89 @@
+<div class="datePicker">
+    <!-- <mat-form-field appearance="fill" [formGroup] = "pickedDate">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName = "day">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        
+        <section>
+           <input type="text" (click) = "calculateWeek(pickedDate.value)">
+        </section>
+    </mat-form-field> -->
+
+    <form>
+        <input [(ngModel)]="staff_book_date" [ngModelOptions] = "{standalone: true}" class="form-control m-input " id="m_datepicker_2_validate" placeholder="Select Date" type="date">
+        <button (click)="bookStaffEmployeeDate()">Click Me</button>
+
+        <section>
+          <input type="text" (click) = calculateWeek(pickedDate.value)>
+       </section>
+    </form>
+</div>
+
+
+
+<table cdk-table [dataSource]="dataSource" class = "container">
+    <!-- Position Column -->
+    <ng-container cdkColumnDef="position">
+      <th cdk-header-cell *cdkHeaderCellDef> No. </th>
+      <td cdk-cell *cdkCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container cdkColumnDef="name">
+      <th cdk-header-cell *cdkHeaderCellDef> Name </th>
+      <td cdk-cell *cdkCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <!-- <ng-container cdkColumnDef="weight">
+      <th cdk-header-cell *cdkHeaderCellDef> Weight </th>
+      <td cdk-cell *cdkCellDef="let element"> {{element.weight}} </td>
+    </ng-container> -->
+  
+    <!-- Symbol Column -->
+    <ng-container cdkColumnDef="city">
+      <th cdk-header-cell *cdkHeaderCellDef> City </th>
+      <td cdk-cell *cdkCellDef="let element"> {{element.city}} </td>
+    </ng-container>
+
+    <ng-container cdkColumnDef="startDate">
+        <th cdk-header-cell *cdkHeaderCellDef> Date </th>
+        <td cdk-cell *cdkCellDef="let element"> 
+
+          <table cdk-table [dataSource]="nestedSource">
+            <!-- Position Column -->
+            <ng-container cdkColumnDef="assigned">
+              <th cdk-header-cell *cdkHeaderCellDef> assigned </th>
+              <td cdk-cell *cdkCellDef="let element"> {{element.assigned}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container cdkColumnDef="notStarted">
+              <th cdk-header-cell *cdkHeaderCellDef> notStarted </th>
+              <td cdk-cell *cdkCellDef="let element"> {{element.notStarted}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container cdkColumnDef="completed">
+              <th cdk-header-cell *cdkHeaderCellDef> completed </th>
+              <td cdk-cell *cdkCellDef="let element"> {{element.completed}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container cdkColumnDef="pending">
+              <th cdk-header-cell *cdkHeaderCellDef> pending </th>
+              <td cdk-cell *cdkCellDef="let element"> {{element.pending}} </td>
+            </ng-container>
+          
+            <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+            <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+        </td>
+      </ng-container>
+  
+    <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+    <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
